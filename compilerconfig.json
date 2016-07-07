@@ -1,0 +1,12 @@
+﻿[
+  {
+    "outputFile": "countdown.css",
+    "inputFile": "countdown.less",
+    "minify": {
+      "enabled": false
+    },
+    "includeInProject": true,
+    "sourceMap": false,
+    "options": { }
+  }
+]

@@ -45,3 +45,6 @@ $RECYCLE.BIN/
 Network Trash Folder
 Temporary Items
 .apdisk
+.vs/countdown-clock/v14/.suo
+.vs/config/applicationhost.config
+Web.config

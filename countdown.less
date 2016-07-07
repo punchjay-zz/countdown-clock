@@ -1,0 +1,200 @@
+@fade-in: fade-in 0.3s both ease-out;
+@fade-out: fade-out 0.3s both ease-in;
+@button-base-color: #5bc0de;
+@button-border-color: #46b8da solid 1px;
+@button-hover-color: #31B0D5;
+@button-stop-base-color: #d9534f;
+@button-stop-border-color: #d43f3a;
+@button-stop-hover-color: #C9302C;
+
+.countdown-container {
+    margin: 30px auto;
+    width: 340px;
+    text-align: center;
+    opacity: 0;
+
+    #countdown {
+        font-family: sans-serif;
+        color: #000;
+        display: inline-block;
+        font-weight: 100;
+        text-align: center;
+        font-size: 110px;
+
+        > div {
+            display: inline-block;
+            vertical-align: top;
+
+            &.left-margin {
+                margin-left: -25px;
+            }
+
+            &.right-margin {
+                margin-right: -25px;
+            }
+        }
+
+        div > span {
+            display: inline-block;
+            vertical-align: top;
+        }
+
+        .hide-section {
+            display: none;
+        }
+    }
+
+    .button-container {
+        margin: 30px auto;
+        width: 120px;
+        position: relative;
+
+        .start-button, .stop-button {
+            cursor: pointer;
+            background-color: @button-base-color;
+            border: @button-border-color;
+            border-radius: 4px;
+            -moz-transition: background-color 0.4s ease;
+            -o-transition: background-color 0.4s ease;
+            -webkit-transition: background-color 0.4s ease;
+            transition: background-color 0.4s ease;
+            width: 120px;
+            height: 30px;
+            padding: 5px;
+            position: absolute;
+            top: 0;
+            left: 0;
+
+            p {
+                margin: 8px;
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: 0.9em;
+                color: #fff;
+            }
+
+            &:hover {
+                -moz-transition: background-color 0.4s ease;
+                -o-transition: background-color 0.4s ease;
+                -webkit-transition: background-color 0.4s ease;
+                transition: background-color 0.4s ease;
+                background-color: @button-hover-color;
+            }
+        }
+
+        .stop-button {
+            background-color: @button-stop-base-color;
+            border: @button-stop-border-color;
+            visibility: hidden;
+
+            &:hover {
+                background-color: @button-stop-hover-color;
+            }
+        }
+    }
+}
+
+.fade-in {
+    -moz-animation: @fade-in;
+    -o-animation: @fade-in;
+    -webkit-animation: @fade-in;
+    animation: @fade-in;
+    -moz-animation-delay: 0.3s;
+    -o-animation-delay: 0.3s;
+    -webkit-animation-delay: 0.3s;
+    animation-delay: 0.3s;
+}
+
+.fade-out {
+    -moz-animation: @fade-out;
+    -o-animation: @fade-out;
+    -webkit-animation: @fade-out;
+    animation: @fade-out;
+    -moz-animation-delay: 0.1s;
+    -o-animation-delay: 0.1s;
+    -webkit-animation-delay: 0.1s;
+    animation-delay: 0.1s;
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+        visibility: hidden;
+        top: 45px;
+    }
+
+    to {
+        opacity: 1;
+        visibility: visible;
+        top: 0;
+    }
+}
+
+@-moz-keyframes fade-in {
+    from {
+        opacity: 0;
+        visibility: hidden;
+        top: 45px;
+    }
+
+    to {
+        opacity: 1;
+        visibility: visible;
+        top: 0;
+    }
+}
+
+@-webkit-keyframes fade-in {
+    from {
+        opacity: 0;
+        visibility: hidden;
+        top: 45px;
+    }
+
+    to {
+        opacity: 1;
+        visibility: visible;
+        top: 0;
+    }
+}
+
+@keyframes fade-out {
+    from {
+        opacity: 1;
+        visibility: visible;
+        top: 0;
+    }
+
+    to {
+        opacity: 0;
+        visibility: hidden;
+        top: 145px;
+    }
+}
+
+@-moz-keyframes fade-out {
+    from {
+        opacity: 1;
+        visibility: visible;
+        top: 0;
+    }
+
+    to {
+        opacity: 0;
+        visibility: hidden;
+        top: 145px;
+    }
+}
+
+@-webkit-keyframes fade-out {
+    from {
+        opacity: 1;
+        visibility: visible;
+        top: 0;
+    }
+
+    to {
+        opacity: 0;
+        visibility: hidden;
+        top: 145px;
+    }
+}
