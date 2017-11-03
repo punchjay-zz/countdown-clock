@@ -13,6 +13,7 @@
 
     //calculates the time remaining
     function getTimeRemaining(endtime) {
+
         var totalTime = Date.parse(endtime) - Date.parse(new Date()),
             seconds = Math.floor((totalTime / 1000) % 60),
             minutes = Math.floor((totalTime / 1000 / 60) % 60),
@@ -27,10 +28,12 @@
             'minutes': minutes,
             'seconds': seconds
         };
+
     }
 
     //outputs timer data to html
     function initializeClock(id, endtime) {
+
         var clock = document.getElementById(id),
             daysSpan = clock.querySelector('.days'),
             hoursSpan = clock.querySelector('.hours'),
@@ -38,6 +41,7 @@
             secondsSpan = clock.querySelector('.seconds');
 
         function updateClock() {
+
             var totalTime = getTimeRemaining(endtime);
 
             daysSpan.innerHTML = totalTime.days;
@@ -47,6 +51,7 @@
 
             //timer end - fadein start button and play audio
             if (totalTime.total <= 0) {
+
                 clearInterval(timeinterval);
                 toggleButtons();
 
@@ -54,14 +59,18 @@
                 audio.play();
 
                 timerBt.childNodes[1].innerHTML = "START";
+
             }
+
         }
 
         updateClock();
         window.timeinterval = setInterval(updateClock, 1000);
+
     }
 
     function startClock() {
+
         //takes the current time and adds minutes
         var
             timeInMinutes = 1,
@@ -77,21 +86,26 @@
         stopBt.classList.add('fade-in');
 
         return false;
+
     }
 
     function stopClock() {
+
         clearInterval(timeinterval);
         toggleButtons();
         timerBt.childNodes[1].innerHTML = "START OVER";
 
         return false;
+
     }
 
     function toggleButtons() {
+
         timerBt.classList.remove('fade-out');
         timerBt.classList.add('fade-in');
         stopBt.classList.remove('fade-in');
         stopBt.classList.add('fade-out');
+
     }
 
 });
